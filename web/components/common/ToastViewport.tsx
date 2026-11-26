@@ -6,7 +6,8 @@ import { useTranslation } from "react-i18next";
 import { subscribeNotifications, type Notification } from "@/lib/notifications";
 
 /**
- * Renders the toast stack in the bottom-right. Mounted once at the
+ * Renders the toast stack at the bottom-end (bottom-right in LTR,
+ * bottom-left in RTL). Mounted once at the
  * workspace layout level — every call to `notify()` from anywhere in the
  * app appears here.
  *
@@ -42,7 +43,7 @@ export default function ToastViewport() {
       role="status"
       aria-live="polite"
       aria-atomic="false"
-      className="pointer-events-none fixed bottom-6 right-6 z-[200] flex flex-col gap-2"
+      className="pointer-events-none fixed bottom-6 end-6 z-[200] flex flex-col gap-2"
     >
       {toasts.map((toast) => (
         <div

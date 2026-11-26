@@ -15,6 +15,40 @@ describe("Arabic RTL document direction", () => {
     expect(documentDirection("zh")).toBe("ltr");
   });
 
+  it("applies LTR isolation to inline fragments under RTL", async () => {
+    const { container } = render(
+      <I18nProvider language="ar">
+        <p>
+          مرحبا <code>const x = 1</code>{" "}
+          <a href="mailto:a@example.com">a@example.com</a>
+        </p>
+      </I18nProvider>,
+    );
+    await waitFor(() => {
+      expect(document.documentElement.dir).toBe("rtl");
+    });
+    const code = container.querySelector("code");
+    const mailLink = container.querySelector('a[href^="mailto:"]');
+    expect(code).not.toBeNull();
+    expect(mailLink).not.toBeNull();
+    expect(getComputedStyle(code!).direction).toBe("ltr");
+    expect(getComputedStyle(mailLink!).direction).toBe("ltr");
+  });
+
+  it("mirrors the select affordance under RTL", async () => {
+    const { container } = render(
+      <I18nProvider language="ar">
+        <select className="dt-select" aria-label="test" />
+      </I18nProvider>,
+    );
+    await waitFor(() => {
+      expect(document.documentElement.dir).toBe("rtl");
+    });
+    const style = getComputedStyle(container.querySelector("select")!);
+    expect(parseFloat(style.paddingLeft)).toBeGreaterThan(0);
+    expect(parseFloat(style.paddingRight)).toBe(0);
+  });
+
   it("sets html lang/dir, isolates LTR fragments, and restores LTR on switch", async () => {
     const root = document.documentElement;
     const { rerender, unmount } = render(

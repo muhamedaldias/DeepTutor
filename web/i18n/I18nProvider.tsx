@@ -29,9 +29,42 @@ export function documentDirection(language: AppLanguage | string): "rtl" | "ltr"
 // into the surrounding Arabic text; `ltr` is applied only to fragments that
 // are intrinsically LTR. Everything else uses CSS logical properties.
 const RTL_LTR_ISOLATION_CSS = `
-[dir="rtl"] :is(code, kbd, samp, pre, .katex, .katex-display, [dir="ltr"], [data-dir="ltr"], a[href^="http"]) {
+[dir="rtl"] :is(code, kbd, samp, pre, .katex, .katex-display, [dir="ltr"], [data-dir="ltr"], a[href^="http"], a[href^="mailto:"], a[href^="tel:"]) {
   direction: ltr;
   unicode-bidi: isolate;
+}
+
+/* A few shared rules still use physical left/right. Mirror them here so the
+   fix stays RTL-only and LTR locales are untouched. Scoped by [dir="rtl"] to
+   outrank the single-class utilities in globals.css. */
+[dir="rtl"] .dt-select {
+  background-position: left 0.7rem center;
+  padding-right: 0;
+  padding-left: 2.15rem;
+}
+[dir="rtl"] :is(.prose ul, .prose ol, .prose dd) {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+[dir="rtl"] .prose .footnotes ol {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+[dir="rtl"] .prose blockquote {
+  border-left: 0;
+  border-right: 3px solid var(--muted-foreground);
+  padding-left: 0;
+  padding-right: 1rem;
+}
+[dir="rtl"] :is(.prose th, .watching-video-card) {
+  text-align: start;
+}
+[dir="rtl"] .dt-answerer-name {
+  margin-right: 0;
+  margin-left: -4px;
+}
+[dir="rtl"] .dt-popup-up {
+  transform-origin: bottom right;
 }
 `;
 

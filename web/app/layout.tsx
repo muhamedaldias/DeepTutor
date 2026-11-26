@@ -4,6 +4,7 @@ import "./globals.css";
 import "@/features/ui-layout/classic/classic.css";
 import "@/features/ui-layout/modern/modern.css";
 import ThemeScript from "@/components/ThemeScript";
+import LanguageScript from "@/components/LanguageScript";
 import ToastViewport from "@/components/common/ToastViewport";
 import MotionProvider from "@/components/common/MotionProvider";
 import SettingsReturnTracker from "@/components/settings/SettingsReturnTracker";
@@ -53,6 +54,7 @@ export default function RootLayout({
     >
       <head>
         <ThemeScript />
+        <LanguageScript />
       </head>
       <body
         className="font-sans bg-[var(--background)] text-[var(--foreground)]"

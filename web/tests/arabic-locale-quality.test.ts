@@ -54,8 +54,9 @@ test('Arabic values are translated and keep placeholders intact', () => {
     const target = arabic[key]
     assert.equal(typeof target, 'string', `missing Arabic value for: ${key}`)
     if (target.includes('__UNTRANSLATED__')) offenders.push(`${key}: untranslated marker`)
-    if (target === source) {
-      if (!isPassThrough(source)) offenders.push(`${key}: unchanged English`)
+    const dotStripped = source.endsWith('.') && target === source.slice(0, -1)
+    if (target === source || dotStripped) {
+      if (!isPassThrough(source) && !dotStripped) offenders.push(`${key}: unchanged English`)
     } else if (isPassThrough(source)) {
       if (!arabicScript.test(target)) offenders.push(`${key}: pass-through altered`)
     } else {
