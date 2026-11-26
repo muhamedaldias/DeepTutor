@@ -110,7 +110,7 @@ export default function SettingsNav({ onNavigate }: { onNavigate?: () => void })
                         onClick={onNavigate}
                         aria-current={active ? 'page' : undefined}
                         data-tour={`tour-nav-${page.key}`}
-                        className={`flex min-h-9 items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[var(--ring)] ${active ? 'bg-[var(--accent)] font-medium text-[var(--foreground)]' : 'text-[var(--foreground)] hover:bg-accent/60'}`}
+                        className={`settings-nav-link flex min-h-9 items-center gap-2 rounded-lg px-2.5 py-2 text-[13px] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[var(--ring)] ${active ? 'bg-[var(--accent)] font-medium text-[var(--foreground)]' : 'text-[var(--foreground)] hover:bg-accent/60'}`}
                       >
                         <Icon size={15} strokeWidth={1.8} className="shrink-0" />
                         <span>

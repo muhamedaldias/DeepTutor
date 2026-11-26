@@ -116,7 +116,7 @@
 .dt-account-tabs.is-tucked > :last-child [role="tab"] > svg { transform: translateX(10px) scale(.86); }
 .dt-account-tabs.is-tucked:hover [role="tab"] { opacity: 1; }
 /* The account's half sits at the far end of the bar. */
-.dt-category-bar:not(.is-collapsed) .dt-category-divider { margin-left: auto; }
+.dt-category-bar:not(.is-collapsed) .dt-category-divider { margin-inline-start: auto; }
 @media (prefers-reduced-motion: reduce) { .dt-account-tabs [role="tab"], .dt-account-tabs [role="tab"] > svg { transition: none; } }
 .dt-category-bar [role="tab"]:not(.is-active):hover, .dt-nav-icon:hover { background: var(--accent); color: var(--foreground); }
 .dt-nav-icon { display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: var(--dt-nav-radius); color: var(--muted-foreground); transition: background-color 140ms, color 140ms; }
@@ -128,11 +128,15 @@
 .dt-category-content { padding: 0 8px 16px; }
 .dt-navigation-section { margin-top: 14px; }
 .dt-navigation-heading { display: flex; justify-content: space-between; align-items: center; min-height: 26px; margin-bottom: 2px; padding: 0 var(--dt-nav-pad-x); font-size: var(--dt-nav-label); font-weight: 500; color: var(--muted-foreground); }
-.dt-navigation-row { display: flex; align-items: center; gap: var(--dt-nav-gap); min-height: var(--dt-nav-row); padding: 6px var(--dt-nav-pad-x); border-radius: var(--dt-nav-radius); text-align: left; color: var(--dt-nav-ink); font-size: var(--dt-nav-text); transition: background-color 130ms, color 130ms; }
+.dt-navigation-row { display: flex; align-items: center; gap: var(--dt-nav-gap); min-height: var(--dt-nav-row); padding: 6px var(--dt-nav-pad-x); border-radius: var(--dt-nav-radius); text-align: start; color: var(--dt-nav-ink); font-size: var(--dt-nav-text); transition: background-color 130ms, color 130ms; }
 /* OrganizedSessionList insets its rows 6px; 4px more lands its icons in the
    same column as the navigation rows above (8 + 4 + 6 = row padding 10 + 8). */
 .dt-session-section { padding: 0 4px; }
 .dt-navigation-row > svg { flex-shrink: 0; opacity: .8; }
+/* RTL: the label is the primary content and must start at the reading edge
+   (physical right); the decorative leading icon moves to the physical left.
+   row-reverse mirrors the whole row without touching LTR locales. */
+[dir="rtl"] .dt-navigation-row { flex-direction: row-reverse; }
 .dt-navigation-row:hover, .dt-navigation-row.is-active { background: var(--accent); color: var(--foreground); }
 .dt-navigation-row.is-active { font-weight: 500; }
 .dt-navigation-empty { padding: 4px var(--dt-nav-pad-x); font-size: 11.5px; line-height: 1.7; color: var(--muted-foreground); }
@@ -143,9 +147,9 @@
 .dt-partner-navigation .dt-navigation-heading { flex-shrink: 0; }
 .dt-navigation-heading h2 { display: flex; align-items: center; min-width: 0; gap: 7px; font: inherit; }
 .dt-navigation-count { font-size: 11px; font-weight: 400; font-variant-numeric: tabular-nums; opacity: .6; }
-.dt-navigation-actions { display: flex; align-items: center; gap: 2px; margin-right: -6px; }
+.dt-navigation-actions { display: flex; align-items: center; gap: 2px; margin-inline-end: -6px; }
 .dt-navigation-actions .dt-nav-icon { width: 24px; height: 24px; border-radius: 6px; }
-.dt-navigation-view-all { display: inline-flex; align-items: center; gap: 1px; height: 24px; padding: 0 4px 0 6px; border-radius: 6px; font-size: 11.5px; font-weight: 400; white-space: nowrap; transition: background-color 140ms, color 140ms; }
+.dt-navigation-view-all { display: inline-flex; align-items: center; gap: 1px; height: 24px; padding-block: 0; padding-inline: 6px 4px; border-radius: 6px; font-size: 11.5px; font-weight: 400; white-space: nowrap; transition: background-color 140ms, color 140ms; }
 .dt-navigation-view-all:hover { background: var(--accent); color: var(--foreground); }
 /* Roster: one compact strip that slides sideways; PartnerRoster packs what
    continues past an edge. The selected partner is marked on its avatar. */
@@ -189,10 +193,11 @@
 
 .dt-category-panel:not([hidden]) { display: flex; flex: 1; min-height: 0; flex-direction: column; }
 .dt-learning-navigation { display: flex; flex: 1; flex-direction: column; min-height: 0; padding-top: 10px; }
-.dt-overview-row { display: flex; align-items: center; flex-shrink: 0; border-radius: var(--dt-nav-radius); padding-right: 4px; }
+.dt-overview-row { display: flex; align-items: center; flex-shrink: 0; border-radius: var(--dt-nav-radius); padding-inline-end: 4px; }
 .dt-overview-row:hover, .dt-overview-row.is-active { background: var(--accent); }
 .dt-overview-row > a { display: flex; align-items: center; flex: 1; min-width: 0; min-height: var(--dt-nav-row); gap: var(--dt-nav-gap); padding: 6px var(--dt-nav-pad-x); font-size: var(--dt-nav-text); font-weight: 500; }
 .dt-overview-row > a > svg { flex-shrink: 0; opacity: .8; }
+[dir="rtl"] .dt-overview-row > a { flex-direction: row-reverse; text-align: right; }
 .dt-overview-row > a:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; border-radius: 7px; }
 /* A shelf that opens on its lead entry keeps it clear of the bar above. */
 .dt-category-content > .dt-overview-row:first-child, .dt-category-content > div > .dt-overview-row:first-child { margin-top: 10px; }
@@ -611,7 +616,7 @@ button.dt-record-toggle:focus-visible { outline: 2px solid var(--ring); outline-
 @media (prefers-reduced-motion: reduce) { .dt-starter-card, .dt-starter-card-body { animation: none; } }
 .dt-starter-row {
   display: flex; align-items: center; gap: 10px; width: 100%; min-height: 42px; padding: 0 14px;
-  border-radius: 10px; font-size: 14px; text-align: left; color: color-mix(in srgb, var(--foreground) 86%, transparent);
+  border-radius: 10px; font-size: 14px; text-align: start; color: color-mix(in srgb, var(--foreground) 86%, transparent);
   transition: background-color 120ms, color 120ms;
 }
 .dt-starter-row:hover, .dt-starter-row:focus-visible { background: var(--accent); color: var(--foreground); outline: none; }
@@ -773,8 +778,12 @@ main:has(.dt-page-bar[data-exact]) [data-page-header][data-level="1"]:not(:has(>
 .dt-panel-body { min-height: 0; padding: 2px 8px 10px; }
 .dt-panel-row {
   display: flex; width: 100%; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 12px;
-  text-align: left; transition: background-color 120ms;
+  text-align: start; transition: background-color 120ms;
 }
+/* Panel rows are icon-first in the DOM. In RTL the label must lead at the
+   reading edge (right) and the icon sits on the left. */
+[dir="rtl"] .dt-panel-row { flex-direction: row-reverse; }
+[dir="rtl"] .settings-nav-link { flex-direction: row-reverse; }
 a.dt-panel-row:hover, button.dt-panel-row:hover, .dt-panel-row[aria-pressed="true"] { background: rgb(var(--dt-ink, 55 53 47) / 0.045); }
 .dt-panel-row:focus-visible { outline: 2px solid var(--ring); outline-offset: -2px; }
 .dt-panel-note { padding: 4px 10px 6px; font-size: 12.5px; line-height: 1.65; color: var(--muted-foreground); }
