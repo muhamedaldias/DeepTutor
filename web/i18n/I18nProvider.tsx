@@ -19,6 +19,22 @@ import {
 //   (`I18nProvider`)."
 initI18n();
 
+/** Direction of the document for a UI language; Arabic is the only RTL locale. */
+export function documentDirection(language: AppLanguage | string): "rtl" | "ltr" {
+  return normalizeLanguage(language) === "ar" ? "rtl" : "ltr";
+}
+
+// LTR fragments must not inherit RTL direction from ancestors. `isolate`
+// prevents a number, URL, identifier or formula from leaking its direction
+// into the surrounding Arabic text; `ltr` is applied only to fragments that
+// are intrinsically LTR. Everything else uses CSS logical properties.
+const RTL_LTR_ISOLATION_CSS = `
+[dir="rtl"] :is(code, kbd, samp, pre, .katex, .katex-display, [dir="ltr"], [data-dir="ltr"], a[href^="http"]) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+`;
+
 export function I18nProvider({
   language,
   enabled = true,
@@ -29,6 +45,7 @@ export function I18nProvider({
   children: React.ReactNode;
 }) {
   const nextLang = normalizeLanguage(language);
+  const isRtl = documentDirection(nextLang) === "rtl";
   const [readyLanguage, setReadyLanguage] = useState<AppLanguage | null>(() =>
     enabled &&
     i18n.language === nextLang &&
@@ -46,14 +63,17 @@ export function I18nProvider({
         await i18n.changeLanguage(nextLang);
       }
       if (cancelled) return;
-      // Keep <html lang="..."> in sync for accessibility & Intl defaults.
+      // Keep <html lang/dir> in sync for accessibility, Intl defaults and RTL.
+      // Setting dir back to ltr matters when switching from ar to another UI
+      // language in the same session.
       document.documentElement.lang = nextLang;
+      document.documentElement.dir = isRtl ? "rtl" : "ltr";
       setReadyLanguage(nextLang);
     });
     return () => {
       cancelled = true;
     };
-  }, [enabled, nextLang]);
+  }, [enabled, nextLang, isRtl]);
 
   if (!enabled || readyLanguage !== nextLang) {
     return (
@@ -64,5 +84,10 @@ export function I18nProvider({
       />
     );
   }
-  return children;
+  return (
+    <>
+      {isRtl ? <style data-deeptutor-rtl>{RTL_LTR_ISOLATION_CSS}</style> : null}
+      {children}
+    </>
+  );
 }

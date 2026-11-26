@@ -13,6 +13,7 @@ export const APP_LANGUAGES = [
   { code: "ko", labelKey: "language.korean" },
   { code: "it", labelKey: "language.italian" },
   { code: "hu", labelKey: "language.hungarian" },
+  { code: "ar", labelKey: "language.arabic" },
 ] as const;
 
 export type AppLanguage = (typeof APP_LANGUAGES)[number]["code"];
@@ -41,6 +42,7 @@ export function normalizeLanguage(value: unknown): AppLanguage {
   if (base === "ko" || code === "korean" || code === "한국어") return "ko";
   if (base === "it" || code === "italian" || code === "italiano") return "it";
   if (base === "hu" || code === "hungarian" || code === "magyar") return "hu";
+  if (base === "ar" || code === "arabic" || code === "العربية") return "ar";
   return "en";
 }
 
