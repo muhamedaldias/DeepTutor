@@ -460,6 +460,12 @@ async def _handshake(session: _HostSession, *, resume: str | None, cwd: str | No
 
 
 async def _establish_session(_session: _HostSession, *, resume: str | None, cwd: str | None) -> str:
+    # Local import keeps the opt-in bridge off the module import path: with the
+    # flag unset this function behaves exactly as before (mcpServers: []).
+    from deeptutor.services.subagent.mcp_bridge import build_mcp_servers
+
+    mcp_servers = build_mcp_servers()
+
     # 1. initialize
     request_id = await _session.send_request(
         "initialize", {"protocolVersion": _PROTOCOL_VERSION, "clientCapabilities": {}}
@@ -471,10 +477,10 @@ async def _establish_session(_session: _HostSession, *, resume: str | None, cwd:
         if capabilities.get("loadSession") is not True:
             raise AcpHostError("ACP agent does not support loading sessions (loadSession)")
         method = "session/load"
-        params: dict[str, Any] = {"mcpServers": [], "cwd": workdir, "sessionId": resume}
+        params: dict[str, Any] = {"mcpServers": mcp_servers, "cwd": workdir, "sessionId": resume}
     else:
         method = "session/new"
-        params = {"cwd": workdir, "mcpServers": []}
+        params = {"cwd": workdir, "mcpServers": mcp_servers}
     request_id = await _session.send_request(method, params)
     while True:
         item = await _session.frames.get()
