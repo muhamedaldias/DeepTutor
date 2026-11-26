@@ -1,0 +1,229 @@
+"""Run local Docling conversion outside the FAISS backend process.
+
+Current macOS wheels for Docling's PyTorch dependency and FAISS bundle distinct
+``libomp.dylib`` runtimes. Initializing both in one process aborts with OpenMP
+Error #15 (and suppressing that guard can deadlock). The parent-side helper in
+this module therefore launches the conversion through ``python -m``; only the
+worker branch imports Docling and PyTorch.
+"""
+
+from __future__ import annotations
+
+import argparse
+from collections import deque
+import os
+from pathlib import Path
+import subprocess  # nosec B404 - fixed module command, never a shell
+import sys
+from typing import Callable, Optional, Sequence
+
+from ...types import ParserError
+from .config import DoclingConfig
+from .content_list import write_content_list
+
+_WORKER_MODULE = "deeptutor.services.parsing.engines.docling.local_worker"
+_ERROR_TAIL_LINES = 20
+
+
+def parse_local(
+    source_path: Path,
+    workdir: Path,
+    *,
+    config: DoclingConfig,
+    on_output: Optional[Callable[[str], None]] = None,
+) -> None:
+    """Convert one document in a fresh interpreter and stream worker output."""
+    command = [
+        sys.executable,
+        "-m",
+        _WORKER_MODULE,
+        "--source",
+        str(source_path.resolve()),
+        "--workdir",
+        str(workdir.resolve()),
+    ]
+    if config.do_ocr:
+        command.append("--do-ocr")
+    if config.do_table_structure:
+        command.append("--do-table-structure")
+
+    for name in ("do_formula_enrichment", "do_picture_classification", "do_picture_description"):
+        if getattr(config, name):
+            command.append("--" + name.replace("_", "-"))
+    env = os.environ.copy()
+    if not config.allow_local_model_download:
+        env["HF_HUB_OFFLINE"] = "1"
+        env["TRANSFORMERS_OFFLINE"] = "1"
+    env["PYTHONUNBUFFERED"] = "1"
+    try:
+        process = subprocess.Popen(  # noqa: S603 - argv is fixed and shell=False
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            bufsize=1,
+            env=env,
+        )
+    except OSError as exc:
+        raise ParserError(f"Could not start the isolated Docling worker: {exc}") from exc
+
+    tail: deque[str] = deque(maxlen=_ERROR_TAIL_LINES)
+    try:
+        if process.stdout is not None:
+            for raw_line in process.stdout:
+                line = raw_line.strip()
+                if not line:
+                    continue
+                tail.append(line)
+                if on_output is not None:
+                    on_output(line)
+        return_code = process.wait()
+    except BaseException:
+        _stop_worker(process)
+        raise
+
+    if return_code != 0:
+        detail = "\n".join(tail) or "no diagnostic output"
+        raise ParserError(f"Docling worker exited with code {return_code}: {detail}")
+
+
+def _stop_worker(process: subprocess.Popen) -> None:
+    if process.poll() is not None:
+        return
+    process.terminate()
+    try:
+        process.wait(timeout=5)
+    except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
+
+
+def _build_converter(
+    *,
+    do_ocr: bool,
+    do_table_structure: bool,
+    do_formula_enrichment: bool = False,
+    do_picture_classification: bool = False,
+    do_picture_description: bool = False,
+):
+    """Import and configure Docling inside the isolated worker only.
+
+    Docling's option API moves between compatible releases, so a configuration
+    failure degrades to a converter with upstream defaults instead of failing the
+    parse. That fallback still has to be visible: Docling defaults ``do_ocr`` to
+    True while DeepTutor defaults it to False, so a silent fallback can turn OCR
+    on, change the output and slow the run down with nothing in the log to
+    explain it (see #2518).
+    """
+    from docling.document_converter import DocumentConverter
+
+    try:
+        from docling.datamodel.base_models import InputFormat
+        from docling.datamodel.pipeline_options import PdfPipelineOptions
+        from docling.document_converter import PdfFormatOption
+
+        pipeline_options = PdfPipelineOptions()
+        pipeline_options.do_ocr = do_ocr
+        pipeline_options.do_table_structure = do_table_structure
+        pipeline_options.do_formula_enrichment = do_formula_enrichment
+        pipeline_options.do_picture_classification = do_picture_classification
+        pipeline_options.do_picture_description = do_picture_description
+        # Picture crops feed the image blocks of the content_list IR. Guarded
+        # attribute-by-attribute so a Docling release that renames an option
+        # keeps converting (same contract as the fallback below).
+        if hasattr(pipeline_options, "generate_picture_images"):
+            pipeline_options.generate_picture_images = True
+        if hasattr(pipeline_options, "images_scale"):
+            pipeline_options.images_scale = 2.0
+        return DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
+        )
+    except ImportError:
+        raise
+    except (AttributeError, TypeError, ValueError, RuntimeError) as exc:
+        if do_formula_enrichment or do_picture_classification or do_picture_description:
+            raise ParserError(
+                "Docling cannot apply the requested enrichments; upgrade the parser or disable those options."
+            ) from exc
+        # The worker runs under ``python -m`` and the parent relays stderr through
+        # ``on_output``, so a single line here reaches the parse log.
+        print(
+            "Docling option setup failed "
+            f"({type(exc).__name__}: {exc}); falling back to upstream defaults "
+            "with do_ocr and do_table_structure left unset "
+            f"(DeepTutor requested do_ocr={do_ocr}, do_table_structure={do_table_structure}).",
+            file=sys.stderr,
+            flush=True,
+        )
+        return DocumentConverter()
+
+
+def _convert(
+    source_path: Path,
+    workdir: Path,
+    *,
+    do_ocr: bool,
+    do_table_structure: bool,
+    do_formula_enrichment: bool = False,
+    do_picture_classification: bool = False,
+    do_picture_description: bool = False,
+) -> None:
+    converter = _build_converter(
+        do_ocr=do_ocr,
+        do_table_structure=do_table_structure,
+        do_formula_enrichment=do_formula_enrichment,
+        do_picture_classification=do_picture_classification,
+        do_picture_description=do_picture_description,
+    )
+    result = converter.convert(str(source_path))
+    document = result.document
+    markdown = document.export_to_markdown()
+    workdir.mkdir(parents=True, exist_ok=True)
+    (workdir / f"{source_path.stem}.md").write_text(str(markdown), encoding="utf-8")
+    try:
+        blocks = write_content_list(document, workdir, stem=source_path.stem)
+    except Exception as exc:  # noqa: BLE001 - markdown remains a valid IR
+        print(f"content-list mapping failed; keeping markdown only: {exc}", flush=True)
+        return
+    if blocks:
+        print(f"Wrote {len(blocks)} content_list blocks", flush=True)
+
+
+def _parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="DeepTutor isolated Docling converter")
+    parser.add_argument("--source", required=True, type=Path)
+    parser.add_argument("--workdir", required=True, type=Path)
+    parser.add_argument("--do-ocr", action="store_true")
+    parser.add_argument("--do-table-structure", action="store_true")
+    parser.add_argument("--do-formula-enrichment", action="store_true")
+    parser.add_argument("--do-picture-classification", action="store_true")
+    parser.add_argument("--do-picture-description", action="store_true")
+    return parser
+
+
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    args = _parser().parse_args(argv)
+    try:
+        _convert(
+            args.source,
+            args.workdir,
+            do_ocr=args.do_ocr,
+            do_table_structure=args.do_table_structure,
+            do_formula_enrichment=args.do_formula_enrichment,
+            do_picture_classification=args.do_picture_classification,
+            do_picture_description=args.do_picture_description,
+        )
+    except Exception as exc:  # noqa: BLE001 - forwarded to the parent process
+        print(f"{type(exc).__name__}: {exc}", file=sys.stderr, flush=True)
+        return 1
+    print(f"Converted {args.source.name} with isolated Docling", flush=True)
+    return 0
+
+
+if __name__ == "__main__":  # pragma: no cover - exercised through subprocess
+    raise SystemExit(main())
+
+
+__all__ = ["main", "parse_local"]

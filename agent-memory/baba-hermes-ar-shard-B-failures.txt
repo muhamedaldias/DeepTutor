@@ -1,0 +1,687 @@
+# Shard B — exact failure keys from the primary translate_ar.py run
+
+count=680
+final_log_line=progress 2840/3333 failures=680
+
+Failed batches (offset ranges in keys-B.json): 240-280, 280-320, 440-480, 1000-1040, 1600-1640, 1640-1680, 2000-2040, 2040-2080, 2160-2200, 2320-2360, 2360-2400, 2400-2440, 2440-2480, 2520-2560, 2600-2640, 2640-2680, 2720-2760
+
+Provider metadata	Provider metadata
+Provider model list	Provider model list
+Provider name	Provider name
+Provider saved	Provider saved
+Provider settings	Provider settings
+Provider supports	Provider supports
+Provider type	Provider type
+Provider unavailable	Provider unavailable
+Provider voice documentation	Provider voice documentation
+Provider-specific voice name, e.g. alloy (OpenAI) or model:voice (SiliconFlow).	Provider-specific voice name, e.g. alloy (OpenAI) or model:voice (SiliconFlow).
+Providers	Providers
+Proxy	Proxy
+Public API base	Public API base
+Public HTTPS origin	Public HTTPS origin
+Public device sign-in	Public device sign-in
+Pure vector retrieval, fastest processing speed.	Pure vector retrieval, fastest processing speed.
+Purple	Purple
+Purple color	Purple color
+Put PDFs, web pages and lectures into one collection and read them with an AI companion that can always point back to the source.	Put PDFs, web pages and lectures into one collection and read them with an AI companion that can always point back to the source.
+Put the companion away	Put the companion away
+Put these settings into effect.	Put these settings into effect.
+PyMuPDF4LLM	PyMuPDF4LLM
+PyPI package	PyPI package
+Python	Python
+Python SDK or headless CLI settings for DeepSeek Harness.	Python SDK or headless CLI settings for DeepSeek Harness.
+Qualitative	Qualitative
+Qualitative gate: explain it in your own words	Qualitative gate: explain it in your own words
+Quality	Quality
+Quality / Style	Quality / Style
+Quality: {{quality}}	Quality: {{quality}}
+Quantitative gate: {{pct}}%	Quantitative gate: {{pct}}%
+Queries	Queries
+Query:	Query:
+Querying GitHub	Querying GitHub
+Question	Question
+Question #{{n}}	Question #{{n}}
+Question Bank	Question Bank
+Question Generated	Question Generated
+Question Generator	Question Generator
+Question and answer are required. Use tags to organize imported questions. Review the preview before saving.	Question and answer are required. Use tags to organize imported questions. Review the preview before saving.
+Question bank	Question bank
+Question bank review	Question bank review
+Question pages	Question pages
+Question {{n}}	Question {{n}}
+Question-linked help history	Question-linked help history
+Question-linked help history is unavailable in this version.	Question-linked help history is unavailable in this version.
+Questions	Questions
+Questions from chat, books and mastery paths collect automatically	Questions from chat, books and mastery paths collect automatically
+Questions from every source, together with your own imports.	Questions from every source, together with your own imports.
+Questions from your quizzes will appear here.	Questions from your quizzes will appear here.
+Questions on what this page covers	Questions on what this page covers
+Queue message	Queue message
+Queued	Queued
+Queued messages	Queued messages
+Queued {{count}} files for indexing.	Queued {{count}} files for indexing.
+Quick	Quick
+Quick Check	Quick Check
+Quiz	Quiz
+Quiz Generation	Quiz Generation
+Quiz follow-ups, subagent runs, figures, and the files and links in a reply open here on their own. Select text in a reply to ask Dito, a partner or an agent about just that passage.	Quiz follow-ups, subagent runs, figures, and the files and links in a reply open here on their own. Select text in a reply to ask Dito, a partner or an agent ab
+Quiz follow-ups, subagent runs, figures, and the files and links in a reply open here on their own. Select text in a reply to ask the Little Tutor about just that passage.	Quiz follow-ups, subagent runs, figures, and the files and links in a reply open here on their own. Select text in a reply to ask the Little Tutor about just th
+Quiz me	Quiz me
+Quiz me on this	Quiz me on this
+Quiz me on this page	Quiz me on this page
+Quiz records have not been initialized.	Quiz records have not been initialized.
+Quiz records need migration before they can be reported. Viewing this report does not migrate them.	Quiz records need migration before they can be reported. Viewing this report does not migrate them.
+Quiz settings	Quiz settings
+Quiz stars: {{count}}	Quiz stars: {{count}}
+Quiz-heavy chapter with a runnable code scaffold + explanation.	Quiz-heavy chapter with a runnable code scaffold + explanation.
+Quote this in a reply	Quote this in a reply
+Qwen-Audio TTS is available only in Beijing. Use a Beijing API key and provider URL.	Qwen-Audio TTS is available only in Beijing. Use a Beijing API key and provider URL.
+Qwen-Audio TTS requires a Beijing API key. You can set a Beijing workspace URL in the provider connection; the speech endpoint is selected automatically.	Qwen-Audio TTS requires a Beijing API key. You can set a Beijing workspace URL in the provider connection; the speech endpoint is selected automatically.
+Qwen-Audio TTS speed must be between 0.5 and 2.	Qwen-Audio TTS speed must be between 0.5 and 2.
+Qwen-Audio TTS supports MP3, WAV, Opus and PCM audio formats.	Qwen-Audio TTS supports MP3, WAV, Opus and PCM audio formats.
+Qwen3 TTS uses voices such as Cherry and outputs WAV audio. Match the API key region to the provider URL.	Qwen3 TTS uses voices such as Cherry and outputs WAV audio. Match the API key region to the provider URL.
+RAG	RAG
+RAG Provider	RAG Provider
+RAG provider	RAG provider
+RAG-Anything	LlamaIndex
+REQUIRED	REQUIRED
+Recovery required	Recovery required
+Recurring issue	Recurring issue
+Recurring issues	Recurring issues
+Recycle Bin	Recycle Bin
+Red color	Red color
+Redirecting...	Redirecting...
+Redis	Redis
+Redis URL	Redis URL
+Redis turn coordination	Redis turn coordination
+Redo	Redo
+Ref dropped	Ref dropped
+Reference	Reference
+Reference Answer	Reference Answer
+Reference a source	Reference a source
+Reference generated book chapters in chat.	Reference generated book chapters in chat.
+Reference imported Claude Code / Codex conversations.	Reference imported Claude Code / Codex conversations.
+Reference imported reading sections in chat.	Reference imported reading sections in chat.
+Reference materials	Reference materials
+Reference space	Reference space
+References	References
+Reflecting	Reflecting
+Refresh	Refresh
+Refresh failed — try re-adding the agent.	Refresh failed — try re-adding the agent.
+Refresh history	Refresh history
+Refresh models	Refresh models
+Refresh provider	Refresh provider
+Refresh this shared book before editing it.	Refresh this shared book before editing it.
+Refresh usage	Refresh usage
+Refreshed: no changes	Refreshed: no changes
+Refreshed: {{n}} changes	Refreshed: {{n}} changes
+Regenerate	Regenerate
+Regenerate block failed: {{message}}	Regenerate block failed: {{message}}
+Regenerate covering these too	Regenerate covering these too
+Regenerate page	Regenerate page
+Regenerate this {{kind}}	Regenerate this {{kind}}
+Regenerate…	Regenerate…
+Regenerating…	Regenerating…
+Registration failed	Registration failed
+Reinstall	Reinstall
+Reject	Reject
+Service readiness, diagnostics, and memory usage	Service readiness, diagnostics, and memory usage
+Session activity	Session activity
+Session activity, attachments & previews	Session activity, attachments & previews
+Session avatars — states	Session avatars — states
+Session not found	Session not found
+Session statistics cover the current conversation branch.	Session statistics cover the current conversation branch.
+Session title	Session title
+Session {{id}}	Session {{id}}
+Sessions	Sessions
+Set as active	Set as active
+Set as default	Set as default
+Set context capacity manually	Set context capacity manually
+Set cover color	Set cover color {{color}}
+Set default	Set default
+Set learning goals, teaching style and response preferences for this workspace. Leave blank to use the default behavior.	Set learning goals, teaching style and response preferences for this workspace. Leave blank to use the default behavior.
+Set on its own page	Set on its own page
+Set playback speed to {{rate}}	Set playback speed to {{rate}}
+Set these once for the engine in the Knowledge Center to skip this step next time.	Set these once for the engine in the Knowledge Center to skip this step next time.
+Set this when the browser cannot reach the backend through localhost, such as remote Docker or a reverse proxy.	Set this when the browser cannot reach the backend through localhost, such as remote Docker or a reverse proxy.
+Set up chat first	Set up chat first
+Set up with DeepTutor	Set up with DeepTutor
+Sets the default language for chat and capability responses.	Sets the default language for chat and capability responses.
+Sets this model's default reasoning depth. Auto leaves the choice to the provider.	Sets this model's default reasoning depth. Auto leaves the choice to the provider.
+Settings	Settings
+Settings are written to data/user/settings/document_parsing.json.	Settings are written to data/user/settings/document_parsing.json.
+Settings changed since the last test. Test again to verify them.	Settings changed since the last test. Test again to verify them.
+Settings could not be loaded.	Settings could not be loaded.
+Settings could not be saved.	Settings could not be saved.
+Settings sections	Settings sections
+Setup Tour	Setup Tour
+Shape its mind	Shape its mind
+Share this conversation across browsers	Share this conversation across browsers
+Shared book (read only): your reading progress, bookmarks and captures remain private to you.	Shared book (read only): your reading progress, bookmarks and captures remain private to you.
+Shared book: content edits affect everyone who can access it. Reading progress and captures remain private to you.	Shared book: content edits affect everyone who can access it. Reading progress and captures remain private to you.
+Shared context	Shared context
+Shared deletion is never delegated. Reading progress and notes stay private per user.	Shared deletion is never delegated. Reading progress and notes stay private per user.
+Shared skills can be assigned to multiple workspaces.	Shared skills can be assigned to multiple workspaces.
+Shared whiteboard	Shared whiteboard
+Shared with you	Shared with you
+Shared · edit	Shared · edit
+This legacy LightRAG index remains queryable, but it must be fully rebuilt before incremental uploads.	This legacy LightRAG index remains queryable, but it must be fully rebuilt before incremental uploads.
+This list shows knowledge base references, not the model connection status.	This list shows knowledge base references, not the model connection status.
+This local parser is not installed. Choose the instructions for your server deployment; packages cannot be installed while DeepTutor is running.	This local parser is not installed. Choose the instructions for your server deployment; packages cannot be installed while DeepTutor is running.
+This map could not be found	This map could not be found
+This material could not be opened.	This material could not be opened.
+This material could not be prepared	This material could not be prepared
+This material has no outline to navigate yet.	This material has no outline to navigate yet.
+This mode re-tests what you have already learned. It will not teach anything new.	This mode re-tests what you have already learned. It will not teach anything new.
+This module is not installed or is disabled.	This module is not installed or is disabled.
+This note will be removed from Video Learning.	This note will be removed from Video Learning.
+This notebook could not be opened	This collection could not be opened
+This notebook is empty	This collection is empty
+This override applies only to this knowledge base; the engine default stays unchanged.	This override applies only to this knowledge base; the engine default stays unchanged.
+This page could not be rendered.	This page could not be rendered.
+This page uses protocol {{clientVersion}}, but the server reports {{serverVersion}}.	This page uses protocol {{clientVersion}}, but the server reports {{serverVersion}}.
+This partner shares the workspace's files, knowledge bases, skills, and notebooks. Changes stay in sync; generated files go to its outputs folder.	This partner shares the workspace's files, knowledge bases, skills, and favorites collections. Changes stay in sync; generated files go to its outputs folder.
+This permanently removes the account and its assignments. This cannot be undone.	This permanently removes the account and its assignments. This cannot be undone.
+This permanently removes {{count}} accounts and their assignments. This cannot be undone.	This permanently removes {{count}} accounts and their assignments. This cannot be undone.
+This player does not report playback position, so the passage follows the controls below rather than the video.	This player does not report playback position, so the passage follows the controls below rather than the video.
+This provider does not expose a model list. Its connection can be verified when you test a model or search configuration.	This provider does not expose a model list. Its connection can be verified when you test a model or search configuration.
+This question is no longer active, so your answer could not be sent. Send a new message to continue.	This question is no longer active, so your answer could not be sent. Send a new message to continue.
+This rebuild uses the selected embedding and the role defaults shown below. Change role models in Settings. The configuration is fixed when you confirm; the previous version is preserved if rebuilding fails.	This rebuild uses the selected embedding and the role defaults shown below. Change role models in Settings. The configuration is fixed when you confirm; the pre
+This release mentions migrations or breaking changes. Read the release notes before updating.	This release mentions migrations or breaking changes. Read the release notes before updating.
+This removes {{count}} model(s) and its saved credentials. This can't be undone.	This removes {{count}} model(s) and its saved credentials. This can't be undone.
+This resolves to whatever that source publishes today — it is not pinned to a reviewed revision.	This resolves to whatever that source publishes today — it is not pinned to a reviewed revision.
+This round could not finish	This round could not finish
+This section has no extractable text.	This section has no extractable text.
+This selection will take effect when the empty knowledge base is indexed for the first time.	This selection will take effect when the empty knowledge base is indexed for the first time.
+This session	This session
+This session belongs to a different topic. Open a session from this topic instead.	This session belongs to a different topic. Open a session from this topic instead.
+This settings page is unavailable.	This settings page is unavailable.
+This signed-in provider manages model IDs, context, and capabilities. You can rename the model and choose its reasoning effort.	This signed-in provider manages model IDs, context, and capabilities. You can rename the model and choose its reasoning effort.
+This site looks like it refused to embed (its security headers block iframes). Use “Open in browser” to view it in a real tab.	This site looks like it refused to embed (its security headers block iframes). Use “Open in browser” to view it in a real tab.
+This step needs credentials	This step needs credentials
+This test runs from the DeepTutor backend. In Docker, localhost points to the DeepTutor container. Use a shared-network service name and container port, or host.docker.internal and the published host port.	This test runs from the DeepTutor backend. In Docker, localhost points to the DeepTutor container. Use a shared-network service name and container port, or host
+This tool's runtime service is unavailable.	This tool's runtime service is unavailable.
+This transcript could not be loaded.	This transcript could not be loaded.
+This turn	This turn
+This turn only	This turn only
+This unsent message could not be saved in your browser. Copy it before leaving this page.	This unsent message could not be saved in your browser. Copy it before leaving this page.
+This video could not be opened.	This video could not be opened.
+This video has no accessible transcript. Playback works, but the companion cannot ground explanations in its spoken content.	This video has no accessible transcript. Playback works, but the companion cannot ground explanations in its spoken content.
+This video's owner disabled embedded playback. Open it on YouTube; DeepTutor can still use captions when they are available.	This video's owner disabled embedded playback. Open it on YouTube; DeepTutor can still use captions when they are available.
+This week	This week
+This whisper room has ended. Sending is disabled.	This whisper room has ended. Sending is disabled.
+This will empty the editor. The previous content is kept in Undo until you leave this draft.	This will empty the editor. The previous content is kept in Undo until you leave this draft.
+This will replace the current editor content. The previous content is kept in Undo until you leave this draft.	This will replace the current editor content. The previous content is kept in Undo until you leave this draft.
+This workbook has no sheets to preview.	This workbook has no sheets to preview.
+Thought	Thought
+Thu	Thu
+Tika	Tika
+Tika has no server URL configured.	Tika has no server URL configured.
+Time available	Time available
+Time block for a task in another workspace	Time block for a task in another workspace
+Time block for “{{task}}”	Time block for “{{task}}”
+Time to first token (TTFT)	Time to first token (TTFT)
+Timed out loading linked folders. Click retry.	Timed out loading linked folders. Click retry.
+Timeline	Timeline
+Timeout (seconds)	Timeout (seconds)
+Tips	Tips
+Title	Title
+To do	To do
+To-do list	To-do list
+Today	Today
+Today's review	Today's review
+Toggle header row	Toggle header row
+Toggle heading 1	Toggle heading 1
+Toggle heading 2	Toggle heading 2
+Toggle heading 3	Toggle heading 3
+Toggle sort order	Toggle sort order
+Token usage and performance	Token usage and performance
+Too many files, skipped some	Too many files, skipped some
+Tool	Tool
+Tool Calling…	Tool Calling…
+Tool call	Tool call
+Tool calling	Tool calling
+Tool max retries	Tool max retries
+Tool name in chat	Tool name in chat
+Tool result	Tool result
+Tool summarizer (max tokens)	Tool summarizer (max tokens)
+Visualizer Types	Visualizer Types
+Visualizer renderer is unavailable	Visualizer renderer is unavailable
+Visualizing	Visualizing
+Vocabulary help	Vocabulary help
+Voice	Voice
+Voice ID	Voice ID
+Voice ID from your speech provider	Voice ID from your speech provider
+Voice instructions	Voice instructions
+Voice languages	Voice languages
+Voice preview	Voice preview
+Voice preview failed (HTTP {{status}}).	Voice preview failed (HTTP {{status}}).
+Voice preview failed.	Voice preview failed.
+Voice preview failed. Check the provider credentials, model, voice, language and format.	Voice preview failed. Check the provider credentials, model, voice, language and format.
+Voice preview was cancelled or timed out.	Voice preview was cancelled or timed out.
+Volcengine Speech (Doubao)	Volcengine Speech (Doubao)
+Wait for running conversations to finish before cleanup.	Wait for running conversations to finish before cleanup.
+Wait for the current sync to finish.	Wait for the current sync to finish.
+Wait for the tutor to finish before changing mode	Wait for the tutor to finish before changing mode
+Waiting for a scan…	Waiting for a scan…
+Waiting for output...	Waiting for output...
+Waiting for scan	Waiting for scan
+Waiting for test run...	Waiting for test run...
+Waiting for {{name}}	Waiting for {{name}}
+Waiting…	Waiting…
+Walk me through this	Walk me through this
+Walk me through this block: what it shows, step by step, and why it matters.	Walk me through this block: what it shows, step by step, and why it matters.
+Wants to reach	Wants to reach
+Watch videos with a grounded AI companion.	Watch videos with a grounded AI companion.
+Ways to learn	Ways to learn
+WeChat connected.	WeChat connected.
+WeChat login QR code	WeChat login QR code
+WeChat session expired. Scan a new QR code to reconnect.	WeChat session expired. Scan a new QR code to reconnect.
+WeCom will allow every user who can reach this bot. Restrict allowed senders after setup if needed.	WeCom will allow every user who can reach this bot. Restrict allowed senders after setup if needed.
+WeKnora API key	WeKnora API key
+WeKnora knowledge base ID	WeKnora knowledge base ID
+Web	Web
+Web Search	Web Search
+Web Sources	Web Sources
+Web bookmark	Web bookmark
+Web fetch backend	Web fetch backend
+Web page	Web page
+Web search	Web search
+Web search providers.	Web search providers.
+Web search tool	Web search tool
+Website	Website
+Wed	Wed
+Week	Week
+Weekly	Weekly
+Weekly on {{days}}	Weekly on {{days}}
+Weeks	Weeks
+Welcome to DeepTutor	Welcome to DeepTutor
+What changed	What changed
+What do you want to master?	What do you want to master?
+What does a derivative measure?	What does a derivative measure?
+What goes in this folder	What goes in this folder
+What is this partner for?	What is this partner for?
+What is this path called?	What is this path called?
+What needs doing?	What needs doing?
+What needs your attention	What needs your attention
+What should be researched?	What should be researched?
+What should the animation explain?	What should the animation explain?
+What should the cards help you remember?	What should the cards help you remember?
+What should the diagram show?	What should the diagram show?
+What should the episode cover?	What should the episode cover?
+What should the questions check?	What should the questions check?
+What should this block teach?	What should this block teach?
+What this partner is allowed to use.	What this partner is allowed to use.
+What will this group help you learn or decide?	What will this group help you learn or decide?
+What would you like to learn?	What would you like to learn?
+Whatever the mode, each member's tool traces and intermediate reasoning stay private.	Whatever the mode, each member's tool traces and intermediate reasoning stay private.
+Wheel installation	Wheel installation
+When off, DeepTutor won't consult this agent in chat.	When off, DeepTutor won't consult this agent in chat.
+When to use	When to use
+Where the chunker prefers to cut.	Where the chunker prefers to cut.
+Which concepts should it connect?	Which concepts should it connect?
+Which events, in what span?	Which events, in what span?
+Which figure or construction?	Which figure or construction?
+Which materials should it draw on?	Which materials should it draw on?
+Which service fetches and extracts pages for web_fetch calls.	Which service fetches and extracts pages for web_fetch calls.
+Whisper	Whisper
+You ask	You ask
+You can also enter a model ID manually. Listing a model does not guarantee access to every feature.	You can also enter a model ID manually. Listing a model does not guarantee access to every feature.
+You can connect Feishu, Telegram, Slack and more right after creating.	You can connect Feishu, Telegram, Slack and more right after creating.
+You can reference up to {{count}} reading materials at once.	You can reference up to {{count}} reading materials at once.
+You can reference up to {{count}} reading sections at once.	You can reference up to {{count}} reading sections at once.
+You can still copy the room id.	You can still copy the room id.
+You have no collections yet.	You have no collections yet.
+You have reached your MCP server limit. Remove one first.	You have reached your MCP server limit. Remove one first.
+You said: 	You said: 
+You stopped this round	You stopped this round
+You will be granted admin privileges and can manage other users from the admin dashboard.	You will be granted admin privileges and can manage other users from the admin dashboard.
+You, while it worked	You, while it worked
+YouTube	YouTube
+YouTube Player API could not be loaded.	YouTube Player API could not be loaded.
+YouTube Player API did not initialize.	YouTube Player API did not initialize.
+YouTube Player API timed out.	YouTube Player API timed out.
+YouTube URL	https://youtu.be/…
+YouTube could not verify this embedded player. Open the official video, or check the browser's referrer policy.	YouTube could not verify this embedded player. Open the official video, or check the browser's referrer policy.
+YouTube learning video	YouTube learning video
+YouTube playback failed ({{code}}).	YouTube playback failed ({{code}}).
+YouTube playback failed.	YouTube playback failed.
+YouTube transcript adapter	YouTube transcript adapter
+Your Answer	Your Answer
+Your Claude Code and Codex conversations as named agents — open one to keep chatting, edit what each imports, or refresh to pull in new conversations.	Your Claude Code and Codex conversations as named agents — open one to keep chatting, edit what each imports, or refresh to pull in new conversations.
+Your DeepTutor login expired during authorization. Sign in, then start a new Invidious connection.	Your DeepTutor login expired during authorization. Sign in, then start a new Invidious connection.
+Your account cannot run code, so no CLI app is available to the chat agent — even the ones listed below.	Your account cannot run code, so no CLI app is available to the chat agent — even the ones listed below.
+Your account changed. Reload settings before applying learning text.	Your account changed. Reload settings before applying learning text.
+Your account doesn't have {{model}} assigned yet. Please contact your administrator to get access.	Your account doesn't have {{model}} assigned yet. Please contact your administrator to get access.
+Your answer	Your answer
+Your answers	Your answers
+Your atlas is still uncharted	Your atlas is still uncharted
+Your browser cannot play this file's format. The transcript and the companion still work — open the original to watch it elsewhere.	Your browser cannot play this file's format. The transcript and the companion still work — open the original to watch it elsewhere.
+Your browser doesn't support folder access, but you can still import a ChatGPT JSON export.	Your browser doesn't support folder access, but you can still import a ChatGPT JSON export.
+Your browser doesn't support folder access. Please use a Chromium-based browser (Chrome, Edge, Arc).	Your browser doesn't support folder access. Please use a Chromium-based browser (Chrome, Edge, Arc).
+Your browser doesn't support folder access. Please use a Chromium-based browser.	Your browser doesn't support folder access. Please use a Chromium-based browser.
+Your companions, plus the ones shared with you — each with its own soul, library, and channels.	Your companions, plus the ones shared with you — each with its own soul, library, and channels.
+Your consolidated memory is always included. This controls how much raw recent activity goes with it — conversations, practice questions, searches, documents, in one list ordered by time.	Your consolidated memory is always included. This controls how much raw recent activity goes with it — conversations, practice questions, searches, documents, i
+Your conversations, agents, notebooks, and questions in one place — enter from here.	Your conversations, agents, notebooks, and questions in one place — enter from here.
+Your edits to this record have not been saved yet.	Your edits to this record have not been saved yet.
+Your explanation	Your explanation
+composer.create.draft.headerPersona	Persona draft
+composer.create.draft.headerSkill	Skill draft
+composer.create.draft.nameConflict	A {{kind}} named “{{name}}” already exists. Rename it, then approve again.
+composer.create.draft.notSavedYet	Nothing is saved until you approve it
+composer.create.draft.saveFailed	Couldn't save the draft.
+composer.create.draft.savedAs	Saved as “{{name}}”
+composer.create.draft.tagsPlaceholder	tag-one, tag-two
+composer.create.draft.updatedAs	Updated “{{name}}”
+composer.create.managePersonas	Manage personas
+composer.create.manageSkills	Manage skills
+composer.create.placeholder.persona	Describe the persona you want to create…
+composer.create.placeholder.skill	Describe the skill you want to create…
+composer.create.prefix	create
+composer.lead.label	Used by this message
+composer.tray.addConnector	Add connector
+composer.tray.allConnectors	Auto
+composer.tray.allConnectorsHint	Dito can use tools from each connected service
+composer.tray.allSkills	Auto
+composer.tray.allSkillsHint	Dito reads whichever skills the request needs
+composer.tray.askAgentHint	DeepTutor puts questions to it, then answers
+composer.tray.askPartnerHint	DeepTutor asks them, then answers
+composer.tray.connectors	Connectors
+composer.tray.createHintPersona	A voice and behaviour you can apply to any chat
+composer.tray.createHintSkill	A reusable playbook the model reads on demand
+composer.tray.deeptutor	DeepTutor
+composer.tray.deeptutorAnswers	Answers as usual
+composer.tray.manageSkills	Manage skills
+composer.tray.noConnectors	No connectors yet
+composer.tray.noHandOff	No subagents or partners to hand this to yet
+composer.tray.noSkills	No skills yet
+composer.tray.referenced	{{count}} picked
+composer.tray.searchAnswer	Search styles, subagents, partners
+composer.tray.searchSkills	Search skills
+composer.tray.tools	{{count}} tools
+composer.tray.whoAnswers	Who answers
+composer.tray.whoAnswersHint	The message goes to them; they answer
+concept_graph	concept graph
+concept_map	concept_map
+concepts	concepts
+configured	configured
+constraints	constraints
+contextBudget.chipAria	Context window: {{percent}} used
+contextBudget.estimated	est.
+contextBudget.freeSpace	Free space
+contextBudget.note.deferredTools_one	1 extended tool loads on demand — its schema costs nothing until it is used.
+contextBudget.note.deferredTools_other	{{count}} extended tools load on demand — their schemas cost nothing until they are used.
+contextBudget.note.estimatedWindow	Window size is inferred from the model name. You can set it per model in Settings.
+contextBudget.note.heuristicCounter	Token counts are a rough character-based estimate.
+contextBudget.segment.capability	Capabilities
+contextBudget.segment.extended_tools	Extended tools
+contextBudget.segment.knowledge_base_note	Knowledge base note
+contextBudget.segment.mcp_tools	MCP tools
+contextBudget.segment.memory	Memory
+contextBudget.segment.messages	Messages
+contextBudget.segment.notebooks	Favorites collections
+contextBudget.segment.partner_turn_policy	Partner turn policy
+contextBudget.segment.persona_style	Persona style
+contextBudget.segment.skills	Skills
+contextBudget.segment.sources	Sources
+contextBudget.segment.system_prompt	System prompt
+contextBudget.segment.system_tools	System tools
+contextBudget.segment.tool_manifest	Tool manifest
+contextBudget.segment.workspace	Workspace
+contextBudget.segment.workspace_instructions	Workspace instructions
+contextBudget.title	Context window
+contextBudget.usage	{{used}} / {{total}} ({{percent}})
+conversations	conversations
+correct	correct
+correct: {{answer}}	correct: {{answer}}
+customize.addPrompt	Add prompt
+customize.control.mcp	MCP connectors
+customize.control.partners	Partners
+customize.control.preferences	Preferences
+customize.control.skills	Skills
+customize.control.voice	Voice input
+customize.controls	Input tools
+customize.description	Choose what appears here. Your learning history and installed modules stay intact.
+customize.emptyLearning	Make room for your next learning goal
+customize.emptyLearningHint	Customize this page to show learning methods. Unavailable modules can be reviewed in Settings → Runtime.
+customize.emptyPrompts	This category is hidden until you add a prompt.
+customize.learningFooter	Your choices are saved to your account. Only learning methods available in this environment are shown.
+customize.learningHint	Choose the learning methods shown on this page. Hidden methods can be added back at any time.
+customize.loadError	Could not load page settings. Retry to continue.
+customize.modes	Modes
+customize.modesHint	Choose which available modes appear in the menu. Existing conversations keep their current mode.
+customize.promptLabel	Display title
+customize.promptText	Prompt inserted into the input
+customize.removePrompt	Remove prompt
+customize.requiredPrompts	Give every prompt a title and content before saving.
+customize.reset	Restore defaults
+customize.resetGroup	Restore this category
+customize.saveError	Could not save your changes. Your draft is still here; please retry.
+customize.sections	Customization sections
+customize.starters	Starting prompts
+customize.title	Customize page
+d	d
+deep_dive	deep dive
+default	default
+deployment	deployment
+deviation	deviation
+docs	docs
+docs/	docs/
+document	document
+documents	documents
+draft	draft
+due	due
+due for review	due for review
+e.g. /Users/name/Documents or ~/notes	e.g. /Users/name/Documents or ~/notes
+e.g. /Users/you/project — the agent runs here	e.g. /Users/you/project — the agent runs here
+e.g. 2211asm1	e.g. 2211asm1
+e.g. Ada	e.g. Ada
+e.g. Build intuition for transformer attention with derivations and exercises.	e.g. Build intuition for transformer attention with derivations and exercises.
+e.g. HKUDS/DeepTutor	e.g. HKUDS/DeepTutor
+e.g. Linear algebra	e.g. Linear algebra
+e.g. My coding agent	e.g. My coding agent
+e.g. Probability	e.g. Probability
+e.g. Thermodynamics, Exam review	e.g. Thermodynamics, Exam review
+e.g. docs/ — leave empty for root	e.g. docs/ — leave empty for root
+e.g. http://hermes-uni:8642	e.g. http://hermes-uni:8642
+e.g. patient-tutor	e.g. patient-tutor
+e.g. project-papers	e.g. project-papers
+e.g. socratic-math-mentor	e.g. socratic-math-mentor
+effective model	effective model
+elements	elements
+entities tracked	entities tracked
+entries	entries
+entry	entry
+error	error
+errorType.application	Application Error
+errorType.deviation	Misunderstanding
+errorType.metacognitive	Metacognitive Error
+errorType.structural	Knowledge Structure Gap
+esc	esc
+every {{count}} months	every {{count}} months
+extended	extended
+facts	facts
+facts across {{n}} surfaces	facts across {{n}} surfaces
+figure	figure
+files has a place in this outline	files has a place in this outline
+flash_cards	flash cards
+flashcards	flashcards
+generating	generating
+geogebra	geogebra
+gpt-4o	gpt-4o
+green	green
+guidedLearning.addKp	Add knowledge point
+guidedLearning.alreadyHasProgress	You already have learning progress for this book. Continuing...
+guidedLearning.bookId	Book ID
+guidedLearning.cancel	Cancel
+guidedLearning.chapters	chapters
+guidedLearning.chaptersToImport	{{count}} chapters to import
+guidedLearning.comingSoon	coming soon
+guidedLearning.connectionError	Connection error
+guidedLearning.continueLearning	Continue Learning
+guidedLearning.create	Create
+guidedLearning.createModule	Create Module
+guidedLearning.createModuleFailed	Failed to create module
+guidedLearning.delete	Delete
+guidedLearning.deleteConfirm	This will permanently delete all progress and modules. Continue?
+guidedLearning.deleteFailed	Failed to delete progress
+guidedLearning.selectModule	Select a Module
+guidedLearning.selectModuleDesc	Choose a module to start Mastery Path
+guidedLearning.selectRecords	Select records to import
+guidedLearning.selected	selected
+guidedLearning.stage.completed	Completed
+guidedLearning.stage.diagnostic_phase1	Diagnostic Phase 1
+guidedLearning.stage.diagnostic_phase2	Diagnostic Phase 2
+guidedLearning.stage.error_diagnosis	Error Diagnosis
+guidedLearning.stage.explain	Explain
+guidedLearning.stage.feynman_check	Feynman Check
+guidedLearning.stage.metacognitive_intro	Metacognitive Intro
+guidedLearning.stage.module_test	Module Test
+guidedLearning.stage.plan	Learning Plan
+guidedLearning.stage.practice	Practice
+guidedLearning.stage.practice_quiz	Practice Quiz
+guidedLearning.stage.pretest	Pretest
+guidedLearning.stage.review	Review
+guidedLearning.stageFailed	Stage execution failed. Progress saved, will retry this stage.
+guidedLearning.stages	Learning Stages
+guidedLearning.startLearning	Start Mastery Path
+guidedLearning.startLearningFailed	Failed to start learning for this book
+guidedLearning.submit	Submit
+guidedLearning.tabAll	All
+guidedLearning.tabBook	From Book
+guidedLearning.tabCompleted	Completed
+guidedLearning.tabCurrent	In Progress
+guidedLearning.tabKb	From KB
+guidedLearning.tabManual	Manual
+guidedLearning.tabNotebook	From favorites
+guidedLearning.title	Mastery Path
+guidedLearning.untitledModule	Untitled Module
+http://127.0.0.1:7890 (optional)	http://127.0.0.1:7890 (optional)
+http://localhost:8080	http://localhost:8080
+https://	https://
+https://docs.deeptutor.info/	https://docs.deeptutor.info/
+https://example.com	https://example.com
+image	image
+images	images
+incorrect	incorrect
+interactive	interactive
+language.english	English
+language.french	Français
+language.german	Deutsch
+language.hungarian	Magyar
+language.italian	Italiano
+language.japanese	Japanese
+language.korean	한국어 (일부 번역)
+language.polish	Polish
+language.portuguese	Portuguese
+language.turkish	Türkçe
+language.ukrainian	Ukrainian
+language.vietnamese	Tiếng Việt
+last refresh {{ts}}	last refresh {{ts}}
+legacy_diagram	legacy_diagram
+lists	lists
+liteparse isn't installed (pip install deeptutor[parse-liteparse]).	liteparse isn't installed (pip install deeptutor[parse-liteparse]).
+llm-only	llm-only
+local	local
+main	main
+markitdown	markitdown
+markitdown isn't installed (pip install deeptutor[parse-markitdown]).	markitdown isn't installed (pip install deeptutor[parse-markitdown]).
+mastered	mastered
+masteryMode.outline	Outline
+masteryMode.review	Review
+masteryMode.study	Study
+matching “{{query}}”	matching “{{query}}”
+mcp servers	MCP servers
+mcp.category.ai	AI
+mcp.category.browser	Browser
+mcp.category.business	Business
+mcp.category.code	Code
+mcp.category.data	Data
+mcp.category.docs	Docs
+mcp.category.maps	Maps
+mcp.category.science	Science
+mcp.category.search	Search
+mcp.category.utility	Utility
+mcp.refusal.blockedUrl	That address is not allowed. Use a public https URL for the MCP server.
+mcp.refusal.entryAdminOnly	This service runs as a local command, so only an administrator can add it.
+mcp.refusal.missingCredential	A required credential is missing. Fill in every required field, then try again.
+mcp.refusal.nameReserved	That name belongs to a deployment server. Install it under a different name.
+mcp.refusal.stdioNotAllowed	A server you add yourself has to be a remote URL. Local commands run on the host, so only an administrator can add them.
+mcp.refusal.tooManyServers	You have reached your MCP server limit. Remove one first.
+mcp.tier.curated	Curated
+mcp.tier.registry	Registry
+media	media
+memory run is no longer available	memory run is no longer available
+memory {{retrievability}}% · stability {{stability}} days	memory {{retrievability}}% · stability {{stability}} days
+mermaid	mermaid
+message	message
+messages	messages
+metacognitive	metacognitive
+minutes before	minutes before
+modified	modified
+modules	modules
+more	more
+mounted read-only into the sandbox that runs them.	mounted read-only into the sandbox that runs them.
+my-archive	my-archive
+navigation.accountShelf	Shared by every workspace
+navigation.allGroups	All groups
+navigation.allLearning	All learning
+navigation.allPartners	All partners
+navigation.allPersonalization	All personalization
+navigation.allResources	All resources
+navigation.categories	Main sections
+navigation.chat	Chat
+navigation.chatRecords	Conversations
+navigation.clearSearch	Clear search
+navigation.createLearning	New learning activity
+navigation.createLearningDescription	Choose how you want to learn. Your work stays in its workspace.
+navigation.createdTime	Created time
+navigation.hidePracticeQuestions	Hide {{count}} questions
+navigation.hideRecordChats	Hide {{count}} conversations
+navigation.home	Home
+navigation.ideasForYou	Ideas for you
+navigation.jumpTo	Jump to
+navigation.lastActive	Last active
+navigation.learning	Learning
+navigation.learningDescription	Your books, paths, practice and reading, all in one place.
+navigation.learningFilter	Learning type
+not retryable	not retryable
+not used for this version	not used for this version
+notebooks.count.suffix	Favorites collections
+nothing configured	nothing configured
+of your files did not make it into this outline	of your files did not make it into this outline
+on Trainee, end the room for a debrief.	on Trainee, end the room for a debrief.
+opencode	opencode
+optional	optional
+or click to choose files	or click to choose files
+or paste a link — web page, YouTube, Bilibili	or paste a link — web page, YouTube, Bilibili
+orange	orange
+p. {{page}}	p. {{page}}
+page	page
+pages	pages
+pages ready	pages ready
+partial	partial
+paused	paused
+pending	pending
+personas	personas
+personas.count.suffix	personas
+pipeline is faster; vlm is the vision-language model.	pipeline is faster; vlm is the vision-language model.
+planning	planning
+preset	preset
+propositions across {{n}} slots	propositions across {{n}} slots
+purple	purple
+pymupdf4llm isn't installed (pip install deeptutor[parse-pymupdf4llm]).	pymupdf4llm isn't installed (pip install deeptutor[parse-pymupdf4llm]).
+qualitative	qualitative
+quality (e.g. hd)	quality (e.g. hd)
+queries	queries
+questions	questions
+questions.count.suffix	questions
+quiz	quiz
+readiness.attention.draft	Unapplied changes
+readiness.attention.draftSaved	a saved draft is waiting to be applied
+readiness.attention.draftUnsaved	changes have not been saved anywhere yet
+readiness.attention.none	Nothing needs attention.
+readiness.attention.open	Open
+readiness.attention.title	Needs attention
+readiness.blurb	What can actually run with the current settings.
+readiness.detail.active_model_missing	the selected model no longer exists
